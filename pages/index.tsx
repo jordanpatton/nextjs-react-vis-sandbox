@@ -1,5 +1,7 @@
 import React from 'react';
 
-const Index: React.FC = () => <pre>Index</pre>;
+import EVENTS from '../fixtures/events';
+
+const Index: React.FC = () => <pre>{JSON.stringify(EVENTS, null, 4)}</pre>;
 
 export default Index;
