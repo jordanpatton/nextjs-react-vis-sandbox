@@ -63,7 +63,7 @@ export class GanttChart extends React.Component<{ events: IEvent[] }> {
         return (
             <XYPlot
                 height={500}
-                margin={{ top: 10, right: 10, bottom: 40, left: 10 }}
+                margin={{ top: 40, right: 10, bottom: 10, left: 10 }}
                 stackBy="x"
                 xDomain={[this.getXDomainLower(), this.getXDomainUpper()]}
                 xType="time"
@@ -71,7 +71,10 @@ export class GanttChart extends React.Component<{ events: IEvent[] }> {
                 yType="linear"
                 width={500}
             >
-                <XAxis tickFormat={(v: Date) => `${v.getMonth() + 1}/${v.getDate()}`} />
+                <XAxis
+                    orientation="top"
+                    tickFormat={(v: Date) => `${v.getMonth() + 1}/${v.getDate()}`}
+                />
                 <VerticalGridLines />
                 {/* @ts-ignore: use `data` instead of `barWidth` */}
                 <HorizontalBarSeries

@@ -5,7 +5,7 @@ import { EVENTS } from '../common/fixtures';
 
 const Index: React.FC = () => {
     const [isReversed, setIsReversed] = React.useState<boolean>(false);
-    const events = isReversed ? EVENTS.slice().reverse() : EVENTS;
+    const events = isReversed ? EVENTS : EVENTS.slice().reverse();
     return (
         <>
             <div>
