@@ -5,7 +5,11 @@ import { EVENTS } from '../common/fixtures';
 
 const Index: React.FC = () => {
     const [isReversed, setIsReversed] = React.useState<boolean>(false);
-    const events = isReversed ? EVENTS : EVENTS.slice().reverse();
+    let sortedEvents = EVENTS.sort((a, b) => {
+        const aAbsoluteStart = a.eventStartTimeMs - a.leadInDurationMs;
+        const bAbsoluteStart = b.eventStartTimeMs - b.leadInDurationMs;
+        return aAbsoluteStart - bAbsoluteStart;
+    });
     return (
         <>
             <div>
@@ -13,7 +17,7 @@ const Index: React.FC = () => {
                     Reverse Order
                 </button>
             </div>
-            <GanttChart events={events} />
+            <GanttChart events={isReversed ? sortedEvents : sortedEvents.reverse()} />
         </>
     );
 };
