@@ -1,11 +1,11 @@
-import { IEvent } from '../types';
+import { IEvent } from './types';
 
 const ONE_DAY_MS = 86400000;
 const ONE_HOUR_MS = 3600000;
 const ONE_WEEK_MS = 604800000;
 const START_DATE_MS = 1593630000000;
 
-const EVENTS: IEvent[] = [
+export const EVENTS: IEvent[] = [
     {
         eventDurationMs: ONE_WEEK_MS * 1,
         eventStartTimeMs: START_DATE_MS,
@@ -77,5 +77,3 @@ const EVENTS: IEvent[] = [
         leadOutDurationMs: ONE_HOUR_MS * 1,
     },
 ];
-
-export default EVENTS;
