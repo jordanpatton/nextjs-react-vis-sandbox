@@ -71,7 +71,7 @@ export class GanttChart extends React.Component<{ events: IEvent[] }> {
                 yType="linear"
                 width={500}
             >
-                <XAxis />
+                <XAxis tickFormat={(v: Date) => `${v.getMonth() + 1}/${v.getDate()}`} />
                 <VerticalGridLines />
                 {/* @ts-ignore: use `data` instead of `barWidth` */}
                 <HorizontalBarSeries
